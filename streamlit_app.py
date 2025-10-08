@@ -9,7 +9,7 @@ st.write(
 )
 
 name_on_order = st.text_input("Name on Smoothie ")
-st.write("The current movie title is", name_on_order)
+st.write("Name on Smoothie : ", name_on_order)
 ##option = st.selectbox(
  ##   "What fruit would like today?",
    ## ("Apple", "Strawberry", "Banana","Peaches"),
@@ -42,4 +42,5 @@ if ingredients_list:
 #New section to display smoothie froot nutriiton information
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response.json())
+#st.text(smoothiefroot_response.json())
+sf_df = st.dataframe(smoothiefroot_response.json(),use_container_width=true)
